@@ -34,6 +34,21 @@ public class DatabaseHandler {
         return connection;
     }
 
+    public void createStudentTable() throws SQLException {
+        String query = "CREATE TABLE ESTUDIANTE(MATRICULA INT PRIMARY KEY, NOMBRE VARCHAR(255),APELLIDO VARCHAR(255),TELEFONO VARCHAR(10))";
+        connection = null;
+
+        try {
+            connection = startDatabaseConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            connection.close();
+        }
+    }
+
     public void deleteItemWithId(int studentID) {
         String query = "DELETE FROM Estudiantes WHERE Matricula = ?";
         connection = null;

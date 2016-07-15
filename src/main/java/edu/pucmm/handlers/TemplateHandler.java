@@ -9,6 +9,7 @@ import freemarker.template.Configuration;
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -23,10 +24,12 @@ public class TemplateHandler {
 
     DatabaseHandler dbHandler = new DatabaseHandler(Constants.DB_DRIVER, Constants.DB_URL);
 
-    public void startApp() {
+    public void startApp() throws SQLException {
         Configuration configuration = new Configuration();
         configuration.setClassForTemplateLoading(TemplateHandler.class, "/templates");
         FreeMarkerEngine engine = new FreeMarkerEngine(configuration);
+        
+        dbHandler.createStudentTable();
 
         listAllStudentsTemplate(engine);
         addStudentTemplate(engine);
