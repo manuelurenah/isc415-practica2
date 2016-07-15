@@ -120,7 +120,7 @@ public class DatabaseHandler {
     }
 
     public void insertItemIntoTable(Student student) {
-        String query = "INSERT INTO Estudiante(Matricula, Nombre, Apellidos, Telefono) VALUES (?,?,?,?)";
+        String query = "INSERT INTO Estudiante(Matricula, Nombre, Apellido, Telefono) VALUES (?,?,?,?)";
         connection = null;
 
         try {
@@ -140,7 +140,7 @@ public class DatabaseHandler {
     }
 
     public void updateItemInTable(Student st) {
-        String query = "UPDATE Estudiante SET Nombre=?, Apellidos=?, Telefono=? WHERE Matricula = ?";
+        String query = "UPDATE Estudiante SET Nombre=?, Apellido=?, Telefono=? WHERE Matricula = ?";
         connection = null;
 
         try {
