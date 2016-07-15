@@ -79,7 +79,7 @@ public class DatabaseHandler {
                 Student st = new Student();
                 st.setStudentID(Integer.parseInt(rs.getString("Matricula")));
                 st.setName(rs.getString("Nombre"));
-                st.setLastName(rs.getString("Apellidos"));
+                st.setLastName(rs.getString("Apellido"));
                 st.setPhone(rs.getString("Telefono"));
 
                 studentList.add(st);
@@ -107,7 +107,7 @@ public class DatabaseHandler {
             while(rs.next()) {
                 st.setStudentID(Integer.parseInt(rs.getString("Matricula")));
                 st.setName(rs.getString("Nombre"));
-                st.setLastName(rs.getString("Apellidos"));
+                st.setLastName(rs.getString("Apellido"));
                 st.setPhone(rs.getString("Telefono"));
             }
 
