@@ -50,7 +50,7 @@ public class DatabaseHandler {
     }
 
     public void deleteItemWithId(int studentID) {
-        String query = "DELETE FROM Estudiantes WHERE Matricula = ?";
+        String query = "DELETE FROM Estudiante WHERE Matricula = ?";
         connection = null;
 
         try {
@@ -67,7 +67,7 @@ public class DatabaseHandler {
 
     public List<Student> getAllItemsFromTable() {
         List<Student> studentList = new ArrayList<>();
-        String query = "SELECT * FROM Estudiantes";
+        String query = "SELECT * FROM Estudiante";
         connection = null;
 
         try {
@@ -94,7 +94,7 @@ public class DatabaseHandler {
 
     public Student getItemWithId(int studentID) {
         Student st = new Student();
-        String query = "SELECT * FROM Estudiantes WHERE Matricula = ?";
+        String query = "SELECT * FROM Estudiante WHERE Matricula = ?";
         connection = null;
 
         try {
@@ -120,7 +120,7 @@ public class DatabaseHandler {
     }
 
     public void insertItemIntoTable(Student student) {
-        String query = "INSERT INTO Estudiantes(Matricula, Nombre, Apellidos, Telefono) VALUES (?,?,?,?)";
+        String query = "INSERT INTO Estudiante(Matricula, Nombre, Apellidos, Telefono) VALUES (?,?,?,?)";
         connection = null;
 
         try {
@@ -140,7 +140,7 @@ public class DatabaseHandler {
     }
 
     public void updateItemInTable(Student st) {
-        String query = "UPDATE Estudiantes SET Nombre=?, Apellidos=?, Telefono=? WHERE Matricula = ?";
+        String query = "UPDATE Estudiante SET Nombre=?, Apellidos=?, Telefono=? WHERE Matricula = ?";
         connection = null;
 
         try {

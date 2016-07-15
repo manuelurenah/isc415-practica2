@@ -28,7 +28,7 @@ public class TemplateHandler {
         Configuration configuration = new Configuration();
         configuration.setClassForTemplateLoading(TemplateHandler.class, "/templates");
         FreeMarkerEngine engine = new FreeMarkerEngine(configuration);
-        
+
         dbHandler.createStudentTable();
 
         listAllStudentsTemplate(engine);
